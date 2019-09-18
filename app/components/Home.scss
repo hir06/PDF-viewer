@@ -1,0 +1,111 @@
+.frame {
+	position: relative;
+	width: 1440px;
+	height: 1090px;
+	background: white;
+	.leftBar {
+		position: absolute;
+		width: 384px;
+		height: 1090px;
+		left: 0;
+		top: 0;
+		background: #070D59;
+		.readerZone {
+			position: absolute;
+			width: 208px;
+			height: 37px;
+			left: 53px;
+			top: 70px;
+			background: url(../utils/logo_sm_white.svg);
+		}
+		.docList {
+			width: 344px;
+			position: absolute;
+			top: 199px;
+			height: 600px;
+			overflow: auto;
+			.leftMenuButton {
+				position: relative;
+				width: 205px;
+				left: 54px;
+				height: 70px;
+				.icon {
+					position: absolute;
+					width: 17px;
+          height: 27px;
+          background: url(../utils/left_menu_doc.svg);
+					// background: url(../utils/left_menu_doc.svg);
+				}
+				.docName {
+					position: absolute;
+					width: 170px;
+					left: calc(89px - 54px);
+					font-family: Poppins;
+					font-style: normal;
+					font-weight: 600;
+					font-size: 22px;
+					line-height: 31px;
+					/* or 143% */
+					color: white;
+				}
+			}
+		}
+	}
+	.files {
+		position: absolute;
+		width: 45px;
+		height: 32px;
+		left: 53px;
+		top: 158px;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 31px;
+		/* identical to box height, or 175% */
+		text-transform: uppercase;
+		color: rgba(255, 255, 255, 0.27);
+	}
+}
+
+.leftMenubutton {}
+
+.rightBar {
+	position: absolute;
+	left: 385px;
+	top: 0;
+}
+
+.upload {
+	position: absolute;
+	width: 305px;
+	height: 70px;
+	left: 39px;
+	top: calc(100vh - 80px);
+	background: #F7B633;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	span:nth-child(2) {
+		position: absolute;
+		width: 139px;
+		height: 37px;
+		left: 145px;
+		top: calc(100% - 52px);
+		;
+		font-family: Poppins;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 33px;
+		color: #FFFFFF;
+	}
+}
+
+span.icon {
+	background: url(../utils/Cloud-icon.svg) no-repeat top left;
+	position: absolute;
+	width: 33px;
+	height: 33px;
+	left: 98px;
+	top: calc(100% - 52px);
+}
