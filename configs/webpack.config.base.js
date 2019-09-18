@@ -12,6 +12,10 @@ export default {
   module: {
     rules: [
       {
+        test: /\.pdf$/,
+        use: 'url-loader',
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: {

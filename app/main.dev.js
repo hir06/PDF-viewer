@@ -10,7 +10,7 @@
  *
  * @flow
  */
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, Tray } from 'electron';
 import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
@@ -23,7 +23,7 @@ export default class AppUpdater {
   }
 }
 
-let mainWindow = null;
+let mainWindow,tray;
 
 if (process.env.NODE_ENV === 'production') {
   const sourceMapSupport = require('source-map-support');
@@ -59,22 +59,22 @@ app.on('window-all-closed', () => {
   }
 });
 
-app.on('ready', async () => {
+app.on('ready',async() => {
   if (
     process.env.NODE_ENV === 'development' ||
     process.env.DEBUG_PROD === 'true'
   ) {
     await installExtensions();
   }
-
+  // createTray();
   mainWindow = new BrowserWindow({
     show: false,
-    width: 1024,
-    height: 728
+    width: 1440,
+    height: 1090
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);
-
+  //mainWindow.webContents.openDevTools();
   // @TODO: Use 'ready-to-show' event
   //        https://github.com/electron/electron/blob/master/docs/api/browser-window.md#using-ready-to-show-event
   mainWindow.webContents.on('did-finish-load', () => {
@@ -100,3 +100,7 @@ app.on('ready', async () => {
   // eslint-disable-next-line
   new AppUpdater();
 });
+
+function createTray() {
+    tray = new Tray('abc.png');
+}
