@@ -26,9 +26,9 @@
   .container {
     position: absolute;
     width: 634px;
-    height: 700px;
+    height: 802px;
     left: calc(463.16px - 385px);
     top: 158px;
-    background: #FFFFFF;
+    background: #FFF;
     box-sizing: border-box;
   }
